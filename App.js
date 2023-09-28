@@ -1,20 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import contacts from './data/contactsData';
+import ContactsList from './components/ContactsList';
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container} >
+      <StatusBar style='light'  backgroundColor='rgba(11, 35, 228, 0.8)'/>
+      <ContactsList  contacts={contacts}/>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor:'rgba(209, 207, 207, 0.7)',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+  }
 });
